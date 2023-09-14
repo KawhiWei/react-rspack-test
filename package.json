@@ -1,0 +1,26 @@
+{
+  "name": "rspack-react-ts-starter",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rspack serve",
+    "build": "rspack build"
+  },
+  "dependencies": {
+    "antd": "^5.9.0",
+    "axios": "^1.5.0",
+    "data-request": "^1.1.1",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0",
+    "redux": "^4.2.1"
+  },
+  "devDependencies": {
+    "@rspack/cli": "latest",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
+    "typescript": "^5.0.4"
+  }
+}

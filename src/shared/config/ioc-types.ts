@@ -1,0 +1,16 @@
+export const IocTypes = {
+    ApplicationService: Symbol("ApplicationService"),
+    EnvironmentService: Symbol("EnvironmentService"),
+    DoveLogService: Symbol("DoveLogService"),
+    MatterService: Symbol("MatterService"),
+    ProjectService: Symbol("ProjectService"),
+    ComponentIntegrationService: Symbol("ComponentIntegrationService"),
+    ApplicationPipelineService: Symbol("ApplicationPipelineService"),
+    BuildImageService: Symbol("BuildImageService"),
+    ClusterService: Symbol("ClusterService"),
+    WorkLoadService: Symbol("DeploymentConfigurationService"),
+    InitContainerService: Symbol("InitContainerService"),
+    NameSpaceService: Symbol("NameSpaceService"),
+    ServiceService: Symbol("ServiceService"),
+    PipelineTemplateService: Symbol("PipelineTemplateService"),
+};

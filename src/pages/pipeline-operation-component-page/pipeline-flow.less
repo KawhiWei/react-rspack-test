@@ -1,0 +1,157 @@
+.pipeline-flow {
+    height: 100%;
+
+    .pipeline-flow-content {
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+
+
+    }
+
+    .pipeline-flow-groups-container {
+        height: 100%;
+
+        .pipeline-flow-groups {
+            height: 100%;
+
+            white-space: nowrap;
+
+            .flow-group-content {
+                display: inline-block;
+                position: relative;
+
+                .flow-group-split-line {
+                    height: 100%;
+                    width: 48px;
+                    text-align: center;
+                    padding: 0 1px;
+                    display: inline-block;
+                    vertical-align: top;
+                    position: relative;
+                    -webkit-transform: rotate(0);
+                    -ms-transform: rotate(0);
+                    transform: rotate(0);
+                    margin-left: -16px;
+
+                    .flow-group-split-line-button {
+                        position: relative;
+                        z-index: 1;
+                        color: #8b8b8b;
+                        color: var(--color-text1-7, #8b8b8b);
+                        height: 100%;
+                    }
+                }
+
+                .flow-group {
+                    height: 100%;
+                    padding-top: 19px;
+                    display: inline-block;
+                    overflow-y: auto;
+                    margin-right: 20px;
+
+                    .group-head {
+                        padding: 0 20px;
+                        margin-bottom: 38px;
+
+                        .editable-label {
+                            max-width: 310px;
+
+                            .group-head-title {
+                                margin-right: 20px;
+                                font-size: 12px;
+                                color: var(--color-text1-7, #8b8b8b);
+                            }
+                        }
+
+                    }
+
+                    .flow-job-step-container {
+                        height: auto;
+                        margin: 20px 0px;
+
+                        .flow-job-content {
+                            display: flex;
+                            cursor: pointer;
+                            border: 1px solid var(--color-brand3-2, #e9edf0);
+                            border-radius: 20px;
+                            min-width: 130px;
+                            padding: 0 12px;
+                            align-items: center;
+                            justify-content: center;
+                            background: var(--color-white, #fff);
+                            height: 40px;
+                            box-shadow: 2px 2px 4px #83818133;
+
+                            .flow-job-content-title {
+                                font-size: 12px;
+                                margin-right: 5px;
+                            }
+                        }
+
+                        .flow-job-step-container-create {
+                            display: flex;
+                            cursor: pointer;
+                            border: 1px solid var(--color-line1-5, #adadad);
+                            border-radius: 20px;
+                            min-width: 130px;
+                            padding: 0 12px;
+                            align-items: center;
+                            justify-content: center;
+                            background: rgba(0, 0, 0, 0);
+                            height: 40px;
+                            .flow-job-container-create-title{
+                                font-size: 12px;
+                                margin-right: 5px;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .flow-group-create {
+                margin-right: 20px;
+
+                .flow-group {
+                    .flow-job-content-create {
+                        background: rgba(0, 0, 0, 0);
+                        border: 1px solid var(--color-line1-5, #adadad);
+                        min-width: 150px;
+                        display: flex;
+                        cursor: pointer;
+                        border-radius: 20px;
+                        min-width: 130px;
+                        padding: 0 12px;
+                        align-items: center;
+                        justify-content: center;
+                        height: 40px;
+                        .flow-job-create-title {
+                            font-size: 12px;
+                            margin-right: 5px;
+                        }
+                    }
+                    .flow-basic-edit-information {
+                        color:var(--color-brand1-6,#1b9aee);                        background: white;
+                        min-width: 150px;
+                        display: flex;
+                        cursor: pointer;
+                        border-radius: 20px;
+                        min-width: 130px;
+                        padding: 0 12px;
+                        align-items: center;
+                        justify-content: center;
+                        height: 40px;
+                        .flow-job-create-title {
+                            font-weight: 550;
+                            font-size: 12px;
+                            margin: 5px;
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+}

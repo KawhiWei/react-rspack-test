@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: toyar
+  name: toyar-app-api-svc
+spec:
+  selector:
+    app: toyar-app-api
+  type: NodePort
+  ports:
+  - port: 8080
+    name: restful
+    targetPort: 8080
+    nodePort: 30600
