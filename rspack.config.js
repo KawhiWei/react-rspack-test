@@ -17,15 +17,11 @@ module.exports = {
 	},
 	module: {
 		rules: [
-			// {
-			// 	test: /\.less$/i,
-			// 	use: [
-			// 		// compiles Less to CSS
-			// 		"style-loader",
-			// 		"css-loader",
-			// 		"less-loader",
-			// 	],
-			// },
+			{
+				test: /.less$/,
+				use: ["less-loader"],
+				type: "css"
+			},
 			{
 				test: /\.svg$/,
 				type: "asset"
@@ -33,6 +29,9 @@ module.exports = {
 		]
 	},
 	resolve: {
-		"@": path.resolve(__dirname, 'src'),
+		alias:{
+			"@": path.resolve(__dirname, 'src'),
+		}
+		
 	}
 };

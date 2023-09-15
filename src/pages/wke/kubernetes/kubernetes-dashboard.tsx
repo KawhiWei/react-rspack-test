@@ -1,17 +1,12 @@
 import { AntDesignChartsRadarDto, KubernetesClusterDashboardDto } from "@/domain/kubernetes/clusters/kubernetes-cluster-dto";
-import { Area, G2, Liquid, Pie, Radar, RingProgress } from "@ant-design/charts";
 import {
   Card,
   Col,
-  Divider,
-  List,
-  Progress,
   Row,
   Select,
-  Space,
   Spin,
-  Table,
 } from "antd";
+import { G2, Liquid, Pie, RingProgress } from "@ant-design/charts";
 import { useEffect, useState } from "react";
 
 import { IClusterService } from "@/domain/kubernetes/clusters/icluster-service";

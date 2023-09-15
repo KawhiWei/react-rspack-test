@@ -1,8 +1,6 @@
-import 'antd/dist/antd.css';
 import "./task-list.less"
 
 import {
-    Anchor,
     Card,
     Col,
     Drawer,
