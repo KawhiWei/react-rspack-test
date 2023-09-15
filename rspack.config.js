@@ -1,3 +1,5 @@
+
+const path = require("path");
 /**
  * @type {import('@rspack/cli').Configuration}
  */
@@ -29,5 +31,8 @@ module.exports = {
 				type: "asset"
 			}
 		]
+	},
+	resolve: {
+		"@": path.resolve(__dirname, 'src'),
 	}
 };
