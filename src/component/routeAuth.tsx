@@ -1,13 +1,10 @@
 import { IMenuOutput, IMenuRoute } from '@/shared/menu/IMenu';
-import { Redirect, Route, withRouter } from 'react-router-dom';
+import { Navigate, Route, useNavigate } from 'react-router-dom';
 
 import { Guid } from "guid-typescript";
 import HomePage from "@/pages/home-page/home-page";
-import IocProvider from '@/shared/utils/ioc-provider';
-import { IocTypes } from '@/shared/config/ioc-types';
 import LayoutView from "@/layout/layout-view";
 import React from 'react';
-import Test from "@/pages/test-page/test-page";
 import { USER_MENU } from '@/store/actionType';
 import { asyncComponent as async } from "./asyncComponent";
 import { message } from 'antd';
@@ -89,19 +86,19 @@ const Main: IMenuRoute[] = [
           this.filterMain();
           return (<>
             {renderRoutes(Main)}
-            <Redirect to="/home" />
+            <Navigate to="/home" />
           </>)
         } else {
 
-          return <Redirect to="/home" />
+          return <Navigate to="/home" />
         }
       } else {
         if (targetRouterConfig) {
           if (pathname === "/404") {
             const { component } = targetRouterConfig;
-            return <Route exact={true} path={pathname} component={component} />
+            return <Route  path={pathname} component={component} />
           } else {
-            return <Redirect to="/home" />
+            return <Navigate to="/home" />
           }
         } else {
           // 判断没有设置权限菜单，则根据菜单设置上
@@ -119,9 +116,9 @@ const Main: IMenuRoute[] = [
             return (
               <>
                 {config.map((route: IMenuRoute) => {
-                  return <Route exact={true} key={route.id} path={route.path} component={route.component} />
+                  return <Route  key={route.id} path={route.path} component={route.component} />
                 })}
-                <Redirect to='/404' />
+                <Navigate to='/404' />
               </>
             )
           }
@@ -135,18 +132,18 @@ const Main: IMenuRoute[] = [
         return (
           <>
             {config.map((route: IMenuRoute) => {
-              return <Route exact={true} key={route.id} path={route.path} component={route.component} />
+              return <Route key={route.id} path={route.path} component={route.component} />
             })}
-            <Redirect to={path} />
+            <Navigate to={path} />
           </>
         )
       } else {
         return (
           <>
             {config.map((route: IMenuRoute) => {
-              return <Route exact={true} key={route.id} path={route.path} component={route.component} />
+              return <Route  key={route.id} path={route.path} component={route.component} />
             })}
-            <Redirect to='/login' />
+            <Navigate to='/login' />
           </>
         )
       }
@@ -154,4 +151,4 @@ const Main: IMenuRoute[] = [
     }
   }
 }
-export default withRouter(RouteAuth as any);
+export default useNavigate(RouteAuth as any);
