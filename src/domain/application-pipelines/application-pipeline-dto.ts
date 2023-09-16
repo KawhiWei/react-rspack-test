@@ -1,4 +1,4 @@
-import { PipelineBuildStateEnum, StepTypeEnum } from "./applicationpipeline-enum";
+import { PipelineBuildStateEnum, StepTypeEnum } from "./application-pipeline-enum";
 
 import { IEntity } from "@/shared/entity";
 

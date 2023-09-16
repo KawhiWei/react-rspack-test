@@ -1,8 +1,6 @@
 import "./home-page.less";
 
 // import Draggable from 'react-draggable';
-import StackedLineCharts from "./stacked-line-charts";
-import { useState } from "react";
 
 const HomePage = () => {
 

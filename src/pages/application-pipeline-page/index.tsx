@@ -16,12 +16,12 @@ import BuildLogs from "./build-log";
 import ExecutedHistory from "./executed-history";
 import {
   IApplicationPipelineOutputDto,
-} from "@/domain/applicationpipelines/applicationpipeline-dto";
-import { IApplicationPipelineService } from "@/domain/applicationpipelines/iapplication-pipeline-service";
+} from "@/domain/application-pipelines/application-pipeline-dto";
+import { IApplicationPipelineService } from "@/domain/application-pipelines/iapplication-pipeline-service";
 import { IocTypes } from "@/shared/config/ioc-types";
 import Operation from "./operation";
 import { OperationTypeEnum } from "@/shared/operation/operationType";
-import { PipelineBuildStateEnum } from "@/domain/applicationpipelines/applicationpipeline-enum";
+import { PipelineBuildStateEnum } from "@/domain/application-pipelines/application-pipeline-enum";
 import { initPaginationConfig } from "../../shared/ajax/request";
 import { useHistory } from "react-router-dom";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";

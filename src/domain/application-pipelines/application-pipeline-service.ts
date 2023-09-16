@@ -1,4 +1,4 @@
-import { IApplicationPipelineFlowUpdateInputDto, IApplicationPipelineInputDto, IApplicationPipelineOutputDto } from "./applicationpipeline-dto";
+import { IApplicationPipelineFlowUpdateInputDto, IApplicationPipelineInputDto, IApplicationPipelineOutputDto } from "./application-pipeline-dto";
 import { IServerPageReturn, IServerReturn } from "@/shared/entity";
 
 import { ApplicationPipelineApi } from "@/constans/api";

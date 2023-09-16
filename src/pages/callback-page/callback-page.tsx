@@ -1,10 +1,8 @@
 import "./callback-page.less";
 
-import { Spin, message } from 'antd';
 import { useEffect, useState } from 'react';
 
-import { IocTypes } from '@/shared/config/ioc-types';
-import useProvider from '@/shared/customHooks/provider';
+import { Spin } from 'antd';
 
 const CallbackPage = (props: { history: any }) => {
   // const menus: IMenuService = useProvider(IocTypes.MenuService);

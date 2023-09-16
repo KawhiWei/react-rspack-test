@@ -1,33 +1,16 @@
 import "../drawer.less";
 
 import {
-  ApplicationLevelMap,
-  ApplicationStateMap,
-} from "@/domain/maps/application-map";
-import {
   Button,
-  Col,
   Drawer,
-  DrawerProps,
   Form,
   Input,
-  InputNumber,
-  Modal,
-  Row,
-  Select,
   Space,
   message,
 } from "antd";
-import {
-  formItemDoubleRankLayout,
-  formItemSingleRankLayout,
-  tailLayout,
-} from "@/constans/layout/optionlayout";
 import { useEffect, useState } from "react";
 
 import { IApplicationService } from "@/domain/applications/iapplication-service";
-import { IBuildImageService } from "@/domain/buildimages/ibuildimage-service";
-import { IEnvironmentService } from "@/domain/environment/ienvironment-service";
 import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IocTypes } from "@/shared/config/ioc-types";
 import { OperationTypeEnum } from "@/shared/operation/operationType";
@@ -70,17 +53,12 @@ const Operation = (props: IProp) => {
     IocTypes.ApplicationService
   );
   const [loading, setLoading] = useState<boolean>(false);
-  /**
-   * 
-   */
-  const [environmentArray, setEnvironmentArray] = useState<Array<any>>([]);
 
   const [operationState, setOperationState] = useState<IOperationConfig>({
     visible: false,
   });
   const [formData] = Form.useForm();
 
-  const _environmentService: IEnvironmentService = useHookProvider(IocTypes.EnvironmentService);
 
   /**
    * 页面初始化事件
@@ -106,7 +84,6 @@ const Operation = (props: IProp) => {
     switch (props.operationType) {
       case OperationTypeEnum.add:
         editOperationState(true, "添加");
-        // formData.setFieldsValue(initformData);
         break;
       case OperationTypeEnum.view:
         editOperationState(true, "查看");
@@ -133,7 +110,7 @@ const Operation = (props: IProp) => {
    * 底部栏OK事件
    */
   const onFinish = () => {
-    formData.validateFields().then((values) => {
+    formData.validateFields().then(() => {
       let param = formData.getFieldsValue();
       switch (props.operationType) {
         case OperationTypeEnum.add:
@@ -144,7 +121,7 @@ const Operation = (props: IProp) => {
           break;
       }
     })
-      .catch((error) => {
+      .catch(() => {
       });
 
 

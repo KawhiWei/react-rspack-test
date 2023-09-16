@@ -1,7 +1,6 @@
 import {
   Button,
   Col,
-  Empty,
   PaginationProps,
   Row,
   Spin,
@@ -10,7 +9,6 @@ import {
 } from "antd";
 import {
   PlusOutlined,
-  RollbackOutlined,
   SendOutlined,
 } from "@ant-design/icons";
 import {
@@ -50,7 +48,7 @@ const ConfigTablePage = (props: IProp) => {
   /**
    * 配置添加/修改组件
    */
-  const [configOperationElement, setconfigOperationElement] =
+  const [configOperationElement, setConfigOperationElement] =
     useState<any>(null);
 
   /**
@@ -124,7 +122,7 @@ const ConfigTablePage = (props: IProp) => {
       title: "是否公开",
       dataIndex: "isOpen",
       key: "id",
-      render: (text: any, record: any) => {
+      render: (_text: any, record: any) => {
         return (
           <div>
             {record.isOpen ? (
@@ -140,7 +138,7 @@ const ConfigTablePage = (props: IProp) => {
       title: "是否发布",
       dataIndex: "isPublish",
       key: "id",
-      render: (text: any, record: any) => {
+      render: (_text: any, record: any) => {
         return (
           <div>
             {record.isPublish ? (
@@ -180,8 +178,8 @@ const ConfigTablePage = (props: IProp) => {
   /**
    * 清除弹框
    */
-  const claerConfigOperation = () => {
-    setconfigOperationElement(null);
+  const clearConfigOperation = () => {
+    setConfigOperationElement(null);
     getConfigList();
   };
 
@@ -189,9 +187,9 @@ const ConfigTablePage = (props: IProp) => {
    * 添加配置弹框
    */
   const addChangeConfig = () => {
-    setconfigOperationElement(
+    setConfigOperationElement(
       <ConfigOperation
-        onCallbackEvent={claerConfigOperation}
+        onCallbackEvent={clearConfigOperation}
         operationType={OperationTypeEnum.add}
         environmentId={props.environmentId}
       ></ConfigOperation>
@@ -204,14 +202,14 @@ const ConfigTablePage = (props: IProp) => {
   const publishConfig = () => {
     setConfigRelease(
       <ConfigRelease
-        onCallbackEvent={claerConfigRelease}
+        onCallbackEvent={clearConfigRelease}
         operationType={OperationTypeEnum.view}
         environmentId={props.environmentId}
       ></ConfigRelease>
     );
   };
 
-  const claerConfigRelease = () => {
+  const clearConfigRelease = () => {
     setConfigRelease(null);
   };
 

@@ -1,21 +1,15 @@
 import { Col, Drawer, PaginationProps, Row, Table, Tag } from "antd";
-import {
-  EditOutlined,
-  EyeOutlined,
-  FileSearchOutlined,
-  PlusOutlined,
-  SearchOutlined,
-  SettingTwoTone,
-  WarningOutlined,
-} from "@ant-design/icons";
 import { initPaginationConfig, tacitPagingProps } from "@/shared/ajax/request";
 import { useEffect, useState } from "react";
 
 import BuildLogs from "./build-log";
-import { IApplicationPipelineService } from "@/domain/applicationpipelines/iapplication-pipeline-service";
+import {
+  FileSearchOutlined,
+} from "@ant-design/icons";
+import { IApplicationPipelineService } from "@/domain/application-pipelines/iapplication-pipeline-service";
 import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IocTypes } from "@/shared/config/ioc-types";
-import { PipelineBuildStateEnum } from "@/domain/applicationpipelines/applicationpipeline-enum";
+import { PipelineBuildStateEnum } from "@/domain/application-pipelines/application-pipeline-enum";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
 
 interface IProp {
@@ -39,7 +33,7 @@ const ExecutedHistory = (props: IProp) => {
   const [subBuildLogsElement, setBuildLogsElement] = useState<any>(null);
   const [paginationConfig, setPaginationConfig] =
     useState<initPaginationConfig>(new initPaginationConfig());
-  const [loading, setLoading] = useState<boolean>(false);
+  const [_loading, setLoading] = useState<boolean>(false);
   const [tableData, setTableData] = useState<Array<any>>([]);
   const columns = [
     {
@@ -57,7 +51,7 @@ const ExecutedHistory = (props: IProp) => {
       title: "执行结果",
       dataIndex: "id",
       key: "id",
-      render: (text: any, record: any) => {
+      render: (_text: any, record: any) => {
         return (
           <div>
             <Tag
@@ -74,7 +68,7 @@ const ExecutedHistory = (props: IProp) => {
       title: "操作",
       key: "id",
       fixed: false,
-      render: (text: any, record: any) => {
+      render: (_text: any, record: any) => {
         return (
           <div>
             <FileSearchOutlined

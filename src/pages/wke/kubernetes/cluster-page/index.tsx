@@ -6,13 +6,11 @@ import {
     Popconfirm,
     Row,
     Spin,
-    Switch,
     Table,
     Tooltip,
     message
 } from "antd";
 import {
-    CloudUploadOutlined,
     DeleteOutlined,
     EditOutlined,
     PlusOutlined,

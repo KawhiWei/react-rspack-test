@@ -1,5 +1,5 @@
-import { IBuildImageVersionBaseDto,IBuildImageOutputDto } from "./buildimage-dto";
-import { IServerReturn, IServerPageReturn } from "@/shared/entity";
+import { IBuildImageOutputDto, IBuildImageVersionBaseDto } from "./build-image-dto";
+import { IServerPageReturn, IServerReturn } from "@/shared/entity";
 
 export interface IBuildImageService {
 
@@ -10,5 +10,5 @@ export interface IBuildImageService {
     update(_id: string, _param: any): Promise<IServerReturn<any>>;
     getDetail(_id:string): Promise<IServerReturn<any>>;
     getImageList(): Promise<IServerReturn<Array<IBuildImageOutputDto>>>;
-    addBulidImageVersion(_param:any): Promise<IServerReturn<any>>;
+    addBuildImageVersion(_param:any): Promise<IServerReturn<any>>;
 }

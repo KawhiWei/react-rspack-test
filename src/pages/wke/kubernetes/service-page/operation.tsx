@@ -1,8 +1,6 @@
 import "../../../drawer.less";
 
 import { Button, Card, Col, Drawer, Form, Input, InputNumber, Row, Select, Space, message } from "antd";
-import { INameSpaceInputDto, INameSpaceOutputDto } from "@/domain/kubernetes/namespaces/namespace-dto";
-import { ImagePullPolicyTypeMap, RestartPolicyTypeMap } from "@/domain/maps/container-map";
 import {
     MinusCircleOutlined,
     PlusOutlined
@@ -11,6 +9,7 @@ import { useEffect, useState } from "react";
 
 import { IClusterOutputDto } from "@/domain/kubernetes/clusters/cluster-dto";
 import { IClusterService } from "@/domain/kubernetes/clusters/icluster-service";
+import { INameSpaceOutputDto } from "@/domain/kubernetes/namespaces/namespace-dto";
 import { INameSpaceService } from "@/domain/kubernetes/namespaces/inamespace-service";
 import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IServiceInputDto } from "@/domain/kubernetes/services/service-dto";
@@ -20,7 +19,6 @@ import { IWorkLoadService } from "@/domain/kubernetes/workloads/iworkload-servic
 import { IocTypes } from "@/shared/config/ioc-types";
 import { OperationTypeEnum } from "@/shared/operation/operationType";
 import { PortTypeMap } from "@/domain/maps/port-type-map";
-import { cwd } from "process";
 import { formItemDoubleRankLayout } from "@/constans/layout/optionlayout";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
 

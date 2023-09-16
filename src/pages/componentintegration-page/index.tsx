@@ -15,10 +15,8 @@ import {
 import {
   DeleteOutlined,
   EditOutlined,
-  EyeOutlined,
   PlusOutlined,
   SearchOutlined,
-  SettingTwoTone,
   WarningOutlined,
 } from "@ant-design/icons";
 import {
@@ -144,7 +142,7 @@ const ComponentIntegrationPage = () => {
       title: "操作",
       dataIndex: "id",
       key: "id",
-      render: (text: any, record: any) => {
+      render: (_text: any, record: any) => {
         return (
           <div className="table-operation">
             <Tooltip placement="top" title="编辑">

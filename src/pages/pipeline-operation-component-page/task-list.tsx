@@ -6,11 +6,11 @@ import {
     Drawer,
     Row
 } from "antd";
-import { IPipelineDockerPublishAndBuildImageStepDto, IPipelinePullCodeStepDto, IStepDto } from "@/domain/applicationpipelines/applicationpipeline-dto";
+import { IPipelineDockerPublishAndBuildImageStepDto, IPipelinePullCodeStepDto, IStepDto } from "@/domain/application-pipelines/application-pipeline-dto";
 import { useEffect, useState } from "react";
 
 import { IOperationConfig } from "@/shared/operation/operationConfig";
-import { StepTypeEnum } from '@/domain/applicationpipelines/applicationpipeline-enum';
+import { StepTypeEnum } from '@/domain/application-pipelines/application-pipeline-enum';
 import { taskList } from '@/constans/task';
 
 interface IProp {

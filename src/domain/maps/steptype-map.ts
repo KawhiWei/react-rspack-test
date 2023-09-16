@@ -1,4 +1,4 @@
-import { StepTypeEnum } from "../applicationpipelines/applicationpipeline-enum";
+import { StepTypeEnum } from "../application-pipelines/application-pipeline-enum";
 
 /**
  * 状态列表下来选择数组

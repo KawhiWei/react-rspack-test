@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import DeploymentConfigurationPage from "@/pages/wke/kubernetes/workload-page";
 import { IApplicationBaseDto } from "@/domain/applications/application-dto";
-import { IApplicationPipelineService } from "@/domain/applicationpipelines/iapplication-pipeline-service";
+import { IApplicationPipelineService } from "@/domain/application-pipelines/iapplication-pipeline-service";
 import { IApplicationService } from "@/domain/applications/iapplication-service";
 import { IocTypes } from "@/shared/config/ioc-types";
 import PipelinePage from "../application-pipeline-page/index";

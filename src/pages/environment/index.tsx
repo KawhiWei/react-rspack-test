@@ -2,33 +2,24 @@ import {
 
 } from "@ant-design/icons";
 
-import { Button, Card, Col, Descriptions, Form, Input, Layout, List, Modal, PaginationProps, Popconfirm, Row, Spin, Table, Tabs, Tag, Tooltip, message } from "antd";
+import { Button, Col, Form, Input, PaginationProps, Popconfirm, Row, Spin, Table, Tooltip, message } from "antd";
 import {
     DeleteOutlined,
-    DeleteTwoTone,
-    EditOutlined,
-    EyeOutlined,
-    FileAddTwoTone,
-    LeftOutlined,
     PlusOutlined,
     SearchOutlined,
-    SettingTwoTone,
     WarningOutlined,
 } from '@ant-design/icons';
-import { formItemDoubleRankLayout, searchFormItemDoubleRankLayout, tailLayout } from "@/constans/layout/optionlayout";
 import { initPaginationConfig, tacitPagingProps } from "../../shared/ajax/request"
 import { useEffect, useState } from "react";
 
-import ConfigOperation from "../config/operation";
-import ConfigRelease from "../config/configRelease";
-import { IApplicationBaseDto } from "@/domain/applications/application-dto";
 import { IEnvironmentService } from "@/domain/environment/ienvironment-service";
 import { IocTypes } from "@/shared/config/ioc-types";
 import Operation from "./operation";
 import { OperationTypeEnum } from "@/shared/operation/operationType";
+import { searchFormItemDoubleRankLayout } from "@/constans/layout/optionlayout";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
 
-const EnvironmentPage = (props: any) => {
+const EnvironmentPage = (_props: any) => {
     const [paginationConfig, setPaginationConfig] =
         useState<initPaginationConfig>(new initPaginationConfig());
     const _environmentService: IEnvironmentService =
@@ -87,7 +78,7 @@ const EnvironmentPage = (props: any) => {
             title: "操作",
             dataIndex: "id",
             key: "id",
-            render: (text: any, record: any) => {
+            render: (_text: any, record: any) => {
                 return (
                     <div className="table-operation">
                         <Tooltip placement="top" title="删除">

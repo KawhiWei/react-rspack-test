@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { Drawer } from "antd";
-import { IApplicationPipelineService } from "@/domain/applicationpipelines/iapplication-pipeline-service";
+import { IApplicationPipelineService } from "@/domain/application-pipelines/iapplication-pipeline-service";
 import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IocTypes } from "@/shared/config/ioc-types";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";

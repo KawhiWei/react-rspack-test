@@ -1,8 +1,8 @@
-import { Button, Col, Drawer, Form, Input, Modal, Row, Space, message } from "antd";
-import { formItemDoubleRankLayout, formItemSingleRankLayout, tailLayout } from "@/constans/layout/optionlayout";
+import { Button, Col, Drawer, Form, Input, Row, Space, message } from "antd";
+import { formItemSingleRankLayout, tailLayout } from "@/constans/layout/optionlayout";
 import { useEffect, useState } from "react";
 
-import { IBuildImageService } from "@/domain/buildimages/ibuildimage-service";
+import { IBuildImageService } from "@/domain/build-images/ibuild-image-service";
 import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IocTypes } from "@/shared/config/ioc-types";
 import { OperationTypeEnum } from "@/shared/operation/operationType";
@@ -79,7 +79,7 @@ const Operation = (props: IProp) => {
     };
 
     const onFinish = () => {
-        formData.validateFields().then((values) => {
+        formData.validateFields().then((_values) => {
 
             let param = formData.getFieldsValue();
             switch (props.operationType) {
@@ -91,7 +91,7 @@ const Operation = (props: IProp) => {
                     break;
             }
         })
-            .catch((error) => {
+            .catch((_error) => {
                 
             });
     }

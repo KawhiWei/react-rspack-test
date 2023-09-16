@@ -6,7 +6,6 @@ import {
     Popconfirm,
     Row,
     Spin,
-    Switch,
     Table,
     Tag,
     Tooltip,

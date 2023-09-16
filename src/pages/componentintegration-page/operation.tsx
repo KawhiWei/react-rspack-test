@@ -1,32 +1,15 @@
 import {
   Button,
-  Card,
   Col,
   Drawer,
   Form,
   Input,
-  Modal,
   Radio,
   Row,
-  Select,
   Space,
   message,
 } from "antd";
 import { ComponentCategoryMap, ComponentTypeMap } from "@/domain/maps/componentintegration-map";
-import {
-  DeleteOutlined,
-  EditOutlined,
-  EyeOutlined,
-  MinusCircleOutlined,
-  PlusOutlined,
-  SettingTwoTone,
-  WarningOutlined,
-} from "@ant-design/icons";
-import {
-  formItemSingleRankLayout,
-  searchFormItemDoubleRankLayout,
-  tailLayout,
-} from "@/constans/layout/optionlayout";
 import { useEffect, useState } from "react";
 
 import { IComponentIntegrationService } from "@/domain/componentintegration/icomponentintegration-service";
@@ -77,7 +60,6 @@ const Operation = (props: IProp) => {
     switch (props.operationType) {
       case OperationTypeEnum.add:
         editOperationState(true, "添加");
-        // formData.setFieldsValue(initformData);
         break;
       case OperationTypeEnum.view:
         editOperationState(true, "查看");
@@ -97,7 +79,7 @@ const Operation = (props: IProp) => {
    * 底部栏OK事件
    */
   const onFinish = () => {
-    formData.validateFields().then((values) => {
+    formData.validateFields().then((_values) => {
       let param = formData.getFieldsValue();
       switch (props.operationType) {
         case OperationTypeEnum.add:
@@ -109,7 +91,7 @@ const Operation = (props: IProp) => {
       }
 
     })
-      .catch((error) => {
+      .catch((_error) => {
       });
 
 

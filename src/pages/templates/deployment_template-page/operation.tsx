@@ -26,7 +26,7 @@ import {
 import { useEffect, useState } from "react";
 
 import { IApplicationService } from "@/domain/applications/iapplication-service";
-import { IBuildImageService } from "@/domain/buildimages/ibuildimage-service";
+import { IBuildImageService } from "@/domain/build-images/ibuild-image-service";
 import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IocTypes } from "@/shared/config/ioc-types";
 import { OperationTypeEnum } from "@/shared/operation/operationType";

@@ -9,7 +9,7 @@ import {
 import {
   IStageDto,
   IStepDto,
-} from "@/domain/applicationpipelines/applicationpipeline-dto";
+} from "@/domain/application-pipelines/application-pipeline-dto";
 import { useEffect, useState } from "react";
 
 import StepOperation from "./step-operation";

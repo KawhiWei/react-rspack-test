@@ -1,11 +1,6 @@
 import "../../../drawer.less";
 
-import { Button, Card, Col, Drawer, Form, Input, InputNumber, Row, Select, Space, message } from "antd";
-import { ImagePullPolicyTypeMap, RestartPolicyTypeMap } from "@/domain/maps/container-map";
-import {
-    MinusCircleOutlined,
-    PlusOutlined
-} from "@ant-design/icons";
+import { Button, Drawer, Form, Input, Space, message } from "antd";
 import { useEffect, useState } from "react";
 
 import { IClusterInputDto } from "@/domain/kubernetes/clusters/cluster-dto";
@@ -14,7 +9,6 @@ import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IocTypes } from "@/shared/config/ioc-types";
 import { OperationTypeEnum } from "@/shared/operation/operationType";
 import TextArea from "antd/lib/input/TextArea";
-import { formItemSingleRankLayout } from "@/constans/layout/optionlayout";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
 
 // import "../description.less";

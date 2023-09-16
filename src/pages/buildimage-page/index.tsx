@@ -6,12 +6,12 @@ import {
 } from "../../shared/ajax/request";
 import { useEffect, useState } from "react";
 
-import { IBuildImageService } from  "@/domain/buildimages/ibuildimage-service";
+import BuildImageVersion from "./buildimage-version";
+import { IBuildImageService } from  "@/domain/build-images/ibuild-image-service";
 import { IocTypes } from "@/shared/config/ioc-types";
 import Operation from "./operation";
 import { OperationTypeEnum } from "@/shared/operation/operationType";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
-import BulidImageVersion from "./bulidimage-version";
 
 const BuildImagePage = () => {
 
@@ -23,7 +23,7 @@ const BuildImagePage = () => {
         IocTypes.BuildImageService
     );
     const [subOperationElement, setOperationElement] = useState<any>(null);
-    const [subBulidImageVersionElement, setBulidImageVersionElement] = useState<any>(null);
+    const [subBulidImageVersionElement, setBuildImageVersionElement] = useState<any>(null);
     const columns = [
         {
             title: "名称",
@@ -169,7 +169,7 @@ const BuildImagePage = () => {
 
     const clearElement = () => {
         setOperationElement(null);
-        setBulidImageVersionElement(null);
+        setBuildImageVersionElement(null);
         getPageList();
     }
 
@@ -183,7 +183,7 @@ const BuildImagePage = () => {
     }
 
     const addVersion = (_id:string, _name:string) => {
-        setBulidImageVersionElement(<BulidImageVersion
+        setBuildImageVersionElement(<BuildImageVersion
             operationType={OperationTypeEnum.add}
             buildImageId={_id}
             buildImageName={_name}

@@ -1,11 +1,12 @@
+import { Button, Col, Form, Input, Modal, Row, message } from 'antd';
 import { useEffect, useState } from "react";
-import { OperationTypeEnum } from "@/shared/operation/operationType";
-import { IBuildImageService } from "@/domain/buildimages/ibuildimage-service";
-import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
-import { IocTypes } from "@/shared/config/ioc-types";
-import { Button, Col, Form, Input, message, Modal, Row, Space } from 'antd';
+
+import { IBuildImageService } from "@/domain/build-images/ibuild-image-service";
 import { IOperationConfig } from "@/shared/operation/operationConfig";
+import { IocTypes } from "@/shared/config/ioc-types";
+import { OperationTypeEnum } from "@/shared/operation/operationType";
 import { formItemSingleRankLayout } from "@/constans/layout/optionlayout";
+import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
 
 interface IProp {
     onCallbackEvent?: any;
@@ -21,7 +22,7 @@ const validateMessages = {
     }
 }
 
-const BulidImageVersion = (props: IProp) => {
+const BuildImageVersion = (props: IProp) => {
     const _buildImageService: IBuildImageService = useHookProvider(
         IocTypes.BuildImageService
     );
@@ -50,14 +51,14 @@ const BulidImageVersion = (props: IProp) => {
         props.onCallbackEvent && props.onCallbackEvent();
     }
     const onFinish=()=>{
-        formData.validateFields().then(values => {
+        formData.validateFields().then(_values => {
             let param = formData.getFieldsValue();
             switch (props.operationType){
                 case OperationTypeEnum.add:
                     onAdd(param);
                     break
             }
-        }).catch(error => {
+        }).catch(_error => {
             
         })
     }
@@ -67,7 +68,7 @@ const BulidImageVersion = (props: IProp) => {
             ..._param,
             buildImageId: props.buildImageId
         }
-        _buildImageService.addBulidImageVersion(param).then(rep => {
+        _buildImageService.addBuildImageVersion(param).then(rep => {
             if(rep.success){
                 message.success("保存成功",3);
                 props.onCallbackEvent && props.onCallbackEvent();
@@ -140,4 +141,4 @@ const BulidImageVersion = (props: IProp) => {
         </div>
     )
 }
-export default BulidImageVersion;
+export default BuildImageVersion;

@@ -1,9 +1,9 @@
+import { IBuildImageOutputDto, IBuildImageVersionBaseDto } from "./build-image-dto";
 import { IServerPageReturn, IServerReturn } from "@/shared/entity";
 
 import BaseService from "@/shared/service/BaseService/BaseService";
 import { BuildImageApi } from "@/constans/api";
-import { IBuildImageService } from "./ibuildimage-service";
-import { IBuildImageVersionBaseDto, IBuildImageOutputDto } from "./buildimage-dto";
+import { IBuildImageService } from "./ibuild-image-service";
 
 export class BuildImageService extends BaseService implements IBuildImageService {
     getVersionList(_imageId: string): Promise<IServerReturn<IBuildImageVersionBaseDto>> {
@@ -44,7 +44,7 @@ export class BuildImageService extends BaseService implements IBuildImageService
      * @param _param 添加镜像版本
      * @returns 
      */
-    addBulidImageVersion(_param:any): Promise<IServerReturn<any>>{
+    addBuildImageVersion(_param:any): Promise<IServerReturn<any>>{
         return this.dataRequest.postRequest(`${BuildImageApi.buildImage}/CareatBuildImageVersion`, _param);
     }
 }

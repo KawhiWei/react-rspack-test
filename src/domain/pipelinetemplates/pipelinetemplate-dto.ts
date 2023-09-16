@@ -1,5 +1,5 @@
-import { IStepDto } from "../applicationpipelines/applicationpipeline-dto";
-import { StepTypeEnum } from "../applicationpipelines/applicationpipeline-enum";
+import { IStepDto } from "../application-pipelines/application-pipeline-dto";
+import { StepTypeEnum } from "../application-pipelines/application-pipeline-enum";
 import { publicDecrypt } from "crypto";
 
 export interface IPipelinetemplatedto {

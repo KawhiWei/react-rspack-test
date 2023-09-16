@@ -2,14 +2,14 @@ import "../drawer.less";
 import "../search-panel.less"
 
 import { Button, Row, Spin, message } from "antd";
-import { IApplicationPipelineFlowUpdateInputDto, IStageDto } from "@/domain/applicationpipelines/applicationpipeline-dto";
+import { IApplicationPipelineFlowUpdateInputDto, IStageDto } from "@/domain/application-pipelines/application-pipeline-dto";
 import {
   PlusOutlined,
   SaveOutlined
 } from "@ant-design/icons";
 import { useEffect, useReducer, useState } from "react";
 
-import { IApplicationPipelineService } from "@/domain/applicationpipelines/iapplication-pipeline-service";
+import { IApplicationPipelineService } from "@/domain/application-pipelines/iapplication-pipeline-service";
 import { IocTypes } from "@/shared/config/ioc-types";
 import Operation from "./operation";
 import { OperationTypeEnum } from "@/shared/operation/operationType";

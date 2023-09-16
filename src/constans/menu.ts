@@ -1,6 +1,6 @@
 import { IMenuOutput } from "@/shared/menu/IMenu";
 import { ITaskCategoryDto } from "@/domain/pipelinetemplates/pipelinetemplate-dto";
-import { StepTypeEnum } from "@/domain/applicationpipelines/applicationpipeline-enum";
+import { StepTypeEnum } from "@/domain/application-pipelines/application-pipeline-enum";
 
 export const menuList: IMenuOutput[] = [
   {

@@ -7,7 +7,6 @@ import {
   Row,
   Select,
   Space,
-  Steps,
 } from "antd";
 import {
   formItemSingleRankLayout,
@@ -16,9 +15,8 @@ import {
 import { useEffect, useState } from "react";
 
 import { IOperationConfig } from "@/shared/operation/operationConfig";
-import { IStepDto } from "@/domain/applicationpipelines/applicationpipeline-dto";
-import { StepTypeEnum } from "@/domain/applicationpipelines/applicationpipeline-enum";
-import { StepTypeMap } from "@/domain/maps/steptype-map";
+import { IStepDto } from "@/domain/application-pipelines/application-pipeline-dto";
+import { StepTypeEnum } from "@/domain/application-pipelines/application-pipeline-enum";
 import TextArea from "antd/lib/input/TextArea";
 
 interface IProp {
@@ -49,16 +47,6 @@ interface IProp {
 
 }
 
-const items = [
-  {
-    title: "步骤类型",
-    description: "",
-  },
-  {
-    title: "步骤信息设置",
-    description: "",
-  },
-];
 /***
  * 步骤添加和编辑弹框
  */
@@ -135,7 +123,6 @@ const StepOperation = (props: IProp) => {
    */
   const onFinish = () => {
     let { step } = props;
-    let name = "";
     switch (props.step.stepType) {
       case StepTypeEnum.pullCode:
         step.name = pullCodeFormData.getFieldValue("name");
