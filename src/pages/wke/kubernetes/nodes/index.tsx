@@ -21,12 +21,12 @@ const NodeIndex = (props: IProp) => {
           key: "name",
         },
         {
-          title: "Kubenetes版本",
+          title: "Kubernetes版本",
           dataIndex: "kubernetesVersion",
           key: "kubernetesVersion",
         },
         {
-          title: "Kubenetes运行时类型",
+          title: "Kubernetes运行时类型",
           dataIndex: "containerRuntimeVersion",
           key: "containerRuntimeVersion",
         },
@@ -45,7 +45,7 @@ const NodeIndex = (props: IProp) => {
           dataIndex: 'name',
           title: '节点资源(总量/已用)',
           key: "name",
-          render: (text: any, record: any) => {
+          render: (_text: any, record: any) => {
             return (<div>
               {
                 <div>
@@ -60,7 +60,7 @@ const NodeIndex = (props: IProp) => {
           dataIndex: 'name',
           title: 'IP地址',
           key: "name",
-          render: (text: any, record: any) => {
+          render: (_text: any, record: any) => {
             return (<div>
               {
                 record.ipAddresses.map((item: any) => (

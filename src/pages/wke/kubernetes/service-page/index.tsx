@@ -70,7 +70,7 @@ const ServicePage = (props: IProp) => {
             title: "是否发布",
             dataIndex: "id",
             key: "id",
-            render: (text: any, record: IServiceOutputDto) => {
+            render: (_text: any, record: IServiceOutputDto) => {
                 return (
                     <div className="table-operation">
                         <Switch checked={record.isPublish} disabled ></Switch>
@@ -82,7 +82,7 @@ const ServicePage = (props: IProp) => {
             title: "操作",
             dataIndex: "id",
             key: "id",
-            render: (text: any, record: IServiceOutputDto) => {
+            render: (_text: any, record: IServiceOutputDto) => {
                 return (
                     <div className="table-operation">
                         <Tooltip placement="top" title="编辑">
@@ -147,7 +147,6 @@ const ServicePage = (props: IProp) => {
 
     const getPageList = () => {
         setLoading(true);
-        let param = formData.getFieldsValue();
         let _param = {
             pageSize: paginationConfig.pageSize,
             pageIndex: paginationConfig.current,

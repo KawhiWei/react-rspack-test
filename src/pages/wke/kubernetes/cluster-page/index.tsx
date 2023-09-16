@@ -31,7 +31,7 @@ import { OperationTypeEnum } from "@/shared/operation/operationType";
 import { searchFormItemDoubleRankLayout } from "@/constans/layout/optionlayout";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
 
-const ClusterPage = (props: any) => {
+const ClusterPage = (_props: any) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [formData] = Form.useForm();
     const [tableData, setTableData] = useState<Array<IClusterOutputDto>>();
@@ -62,7 +62,7 @@ const ClusterPage = (props: any) => {
             title: "操作",
             dataIndex: "id",
             key: "id",
-            render: (text: any, record: IClusterOutputDto) => {
+            render: (_text: any, record: IClusterOutputDto) => {
                 return (
                     <div className="table-operation">
                         <Tooltip placement="top" title="编辑">
@@ -122,7 +122,6 @@ const ClusterPage = (props: any) => {
 
     const getPageList = () => {
         setLoading(true);
-        let param = formData.getFieldsValue();
         let _param = {
             pageSize: paginationConfig.pageSize,
             pageIndex: paginationConfig.current,

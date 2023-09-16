@@ -1,11 +1,6 @@
 import "../../../drawer.less";
 
-import { Button, Card, Col, Drawer, Form, Input, InputNumber, Row, Select, Space, message } from "antd";
-import { ImagePullPolicyTypeMap, RestartPolicyTypeMap } from "@/domain/maps/container-map";
-import {
-    MinusCircleOutlined,
-    PlusOutlined
-} from "@ant-design/icons";
+import { Button, Drawer, Form, Input, Select, Space, message } from "antd";
 import { useEffect, useState } from "react";
 
 import { IClusterOutputDto } from "@/domain/kubernetes/clusters/cluster-dto";
@@ -15,7 +10,6 @@ import { INameSpaceService } from "@/domain/kubernetes/namespaces/inamespace-ser
 import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IocTypes } from "@/shared/config/ioc-types";
 import { OperationTypeEnum } from "@/shared/operation/operationType";
-import { formItemDoubleRankLayout } from "@/constans/layout/optionlayout";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
 
 // import "../description.less";
@@ -59,7 +53,7 @@ const Operation = (props: IProp) => {
 
     const _clusterService: IClusterService = useHookProvider(IocTypes.ClusterService);
     const [loading, setLoading] = useState<boolean>(false);
-    const [nameSpace, setNameSpace] = useState<INameSpaceInputDto>({
+    const [nameSpace] = useState<INameSpaceInputDto>({
         chineseName: '',
         name: '',
         clusterId: '',
@@ -133,7 +127,7 @@ const Operation = (props: IProp) => {
                     break;
             }
         })
-            .catch((error) => {
+            .catch(() => {
             });
 
     };

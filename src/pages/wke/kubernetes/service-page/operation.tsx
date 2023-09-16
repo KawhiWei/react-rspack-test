@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { IClusterOutputDto } from "@/domain/kubernetes/clusters/cluster-dto";
 import { IClusterService } from "@/domain/kubernetes/clusters/icluster-service";
 import { INameSpaceOutputDto } from "@/domain/kubernetes/namespaces/namespace-dto";
-import { INameSpaceService } from "@/domain/kubernetes/namespaces/inamespace-service";
 import { IOperationConfig } from "@/shared/operation/operationConfig";
 import { IServiceInputDto } from "@/domain/kubernetes/services/service-dto";
 import { IServiceService } from "@/domain/kubernetes/services/iservice-service";
@@ -52,7 +51,6 @@ const validateMessages = {
     required: "${label} 不可为空",
 };
 const Operation = (props: IProp) => {
-    const _nameSpaceService: INameSpaceService = useHookProvider(IocTypes.NameSpaceService);
     const _serviceService: IServiceService = useHookProvider(IocTypes.ServiceService);
     const [operationState, setOperationState] = useState<IOperationConfig>({
         visible: false,
@@ -61,10 +59,10 @@ const Operation = (props: IProp) => {
 
 
     const [clusterData, setClusterData] = useState<Array<IClusterOutputDto>>([]);
-    const [nameSpaceArrayData, setNameSpaceArrayData] = useState<Array<INameSpaceOutputDto>>([]);
+    const [nameSpaceArrayData] = useState<Array<INameSpaceOutputDto>>([]);
     const _clusterService: IClusterService = useHookProvider(IocTypes.ClusterService);
     const [loading, setLoading] = useState<boolean>(false);
-    const [service, setService] = useState<IServiceInputDto>({
+    const [service] = useState<IServiceInputDto>({
         name: '',
         deploymentId: '',
         nameSpaceId: "",

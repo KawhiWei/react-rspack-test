@@ -141,22 +141,6 @@ const WorkLoadConfigOperation = (props: any) => {
         })
 
     }
-    /**
-       * 底部栏OK事件
-       */
-    const onFinish = () => {
-
-
-    };
-
-
-
-    /**
-     * 修改事件
-     */
-    const onUpdate = (_id: string) => {
-
-    };
 
 
     return (

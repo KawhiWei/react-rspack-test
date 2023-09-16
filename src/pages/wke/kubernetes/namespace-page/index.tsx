@@ -34,7 +34,7 @@ import { OperationTypeEnum } from "@/shared/operation/operationType";
 import { searchFormItemDoubleRankLayout } from "@/constans/layout/optionlayout";
 import useHookProvider from "@/shared/customHooks/ioc-hook-provider";
 
-const NameSpacePage = (props: any) => {
+const NameSpacePage = (_props: any) => {
     const [loading, setLoading] = useState<boolean>(false);
     const [formData] = Form.useForm();
     const [tableData, setTableData] = useState<Array<INameSpaceOutputDto>>();
@@ -63,7 +63,7 @@ const NameSpacePage = (props: any) => {
             title: "是否发布",
             dataIndex: "id",
             key: "id",
-            render: (text: any, record: INameSpaceOutputDto) => {
+            render: (_text: any, record: INameSpaceOutputDto) => {
                 return (
                     <div className="table-operation">
                         {
@@ -80,7 +80,7 @@ const NameSpacePage = (props: any) => {
             title: "操作",
             dataIndex: "id",
             key: "id",
-            render: (text: any, record: INameSpaceOutputDto) => {
+            render: (_text: any, record: INameSpaceOutputDto) => {
                 return (
                     <div className="table-operation">
                         <Tooltip placement="top" title="编辑">
@@ -168,7 +168,6 @@ const NameSpacePage = (props: any) => {
 
     const getPageList = () => {
         setLoading(true);
-        let param = formData.getFieldsValue();
         let _param = {
             pageSize: paginationConfig.pageSize,
             pageIndex: paginationConfig.current,

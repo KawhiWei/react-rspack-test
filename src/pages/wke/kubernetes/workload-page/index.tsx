@@ -44,7 +44,6 @@ interface IProp {
 const DeploymentConfigurationPage = (props: IProp) => {
     const history = useHistory();
     const [loading, setLoading] = useState<boolean>(false);
-    const [formData] = Form.useForm();
     const [tableData, setTableData] = useState<Array<IWorkLoadOutputDto>>();
     const [subOperationElement, setOperationElement] = useState<any>(null);
     const [paginationConfig, setPaginationConfig] =
@@ -91,7 +90,7 @@ const DeploymentConfigurationPage = (props: IProp) => {
             title: "操作",
             dataIndex: "id",
             key: "id",
-            render: (text: any, record: IWorkLoadOutputDto) => {
+            render: (_text: any, record: IWorkLoadOutputDto) => {
                 return (
                     <div className="table-operation">
                         <Tooltip placement="top" title="编辑">
@@ -154,7 +153,6 @@ const DeploymentConfigurationPage = (props: IProp) => {
 
     const getPageList = () => {
         setLoading(true);
-        let param = formData.getFieldsValue();
         let _param = {
             pageSize: paginationConfig.pageSize,
             pageIndex: paginationConfig.current,
@@ -168,40 +166,33 @@ const DeploymentConfigurationPage = (props: IProp) => {
         })
     }
     const addWorkLoad = () => {
-        setOperationElement(<Operation 
-            operationType={OperationTypeEnum.add} 
-            appId={props.appId} 
+        setOperationElement(<Operation
+            operationType={OperationTypeEnum.add}
+            appId={props.appId}
             onCallbackEvent={clearElement}
             onConfirmCallbackEvent={ConfirmCallbackEvent}></Operation>)
     }
 
-     /**
-   * 抽屉确认回调事件，判断是否需要前往流水线配置界面
-   * @param _isGotoWorkLoadConfig 
-   * @param _id 
-   */
-  const ConfirmCallbackEvent = (_isGotoWorkLoadConfig: boolean, _id: string) => {
-    if (_isGotoWorkLoadConfig) {
-        gotoWorkLoadConfig(_id)
-    }
-    else {
-        clearElement();
-      getPageList();
+    /**
+  * 抽屉确认回调事件，判断是否需要前往流水线配置界面
+  * @param _isGotoWorkLoadConfig 
+  * @param _id 
+  */
+    const ConfirmCallbackEvent = (_isGotoWorkLoadConfig: boolean, _id: string) => {
+        if (_isGotoWorkLoadConfig) {
+            gotoWorkLoadConfig(_id)
+        }
+        else {
+            clearElement();
+            getPageList();
+        }
+
     }
 
-  }
-
-  
-    /***
-     * 修改一个配置
-     */
-    const editRow = (_id: string) => {
-        setOperationElement(<Operation operationType={OperationTypeEnum.edit} appId={props.appId} id={_id} onCallbackEvent={clearElement}></Operation>)
-    }
 
     /**
-* 是否前往流水线配置
-*/
+    * 是否前往流水线配置
+    */
     const gotoWorkLoadConfig = (_id: string) => {
         history.push({
             pathname: "/tks/kubernetes/workload/config",

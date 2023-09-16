@@ -49,7 +49,7 @@ const Operation = (props: IProp) => {
         visible: false,
     });
     const [loading, setLoading] = useState<boolean>(false);
-    const [nameSpace, setNameSpace] = useState<IClusterInputDto>({
+    const [nameSpace] = useState<IClusterInputDto>({
         config: '',
         name: '',
         clusterVersion: ''
@@ -109,7 +109,7 @@ const Operation = (props: IProp) => {
                     break;
             }
         })
-            .catch((error) => {
+            .catch(() => {
             });
 
     };

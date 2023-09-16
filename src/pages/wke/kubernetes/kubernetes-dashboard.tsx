@@ -30,7 +30,7 @@ const KubernetesDashboard = () => {
   const [memoryUsagePercent, setMemoryUsagePercent] = useState<number>(0);
   const [nodeReadyPercent, setNodeReadyPercent] = useState<number>(0);
   const [podUsagePercent, setPodUsagePercent] = useState<number>(0);
-  const [kubernetesClusterDashboardData, setKubernetesClusterDashboardData] = useState<KubernetesClusterDashboardDto>();
+  const [_kubernetesClusterDashboardData, setKubernetesClusterDashboardData] = useState<KubernetesClusterDashboardDto>();
 
 
   const overviewConfig = {

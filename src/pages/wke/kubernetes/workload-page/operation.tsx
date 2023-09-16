@@ -75,7 +75,7 @@ const Operation = (props: IProp) => {
     const [clusterId, setClusterId] = useState<string>('');
     const [environmentData, setEnvironmentData] = useState<Array<any>>([]);
 
-    const [workLoadData, setWorkLoadData] = useState<IWorkLoadCreateInputDto>();
+    const [workLoadData] = useState<IWorkLoadCreateInputDto>();
     const [checked, setChecked] = useState(props.operationType === OperationTypeEnum.add);
     const [workLoadFormData] = Form.useForm();
 
@@ -189,7 +189,7 @@ const Operation = (props: IProp) => {
                     break;
             }
 
-        }).catch((error) => { });
+        }).catch((_error) => { });
     };
     /**
      * 
