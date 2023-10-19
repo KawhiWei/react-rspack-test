@@ -1,4 +1,4 @@
-import { Card, Col, PageHeader, Row, Spin, Tabs, Tag, Timeline } from "antd";
+import { Card, Col, Row, Spin, Tabs, Tag, Timeline } from "antd";
 import { useEffect, useState } from "react";
 
 import DeploymentConfigurationPage from "@/pages/wke/kubernetes/workload-page";
@@ -108,12 +108,12 @@ const ApplicationDashboard = (props: any) => {
 
   return (
     <div>
-      <PageHeader
+      {/* <PageHeader
         className="site-page-header"
         onBack={() => backToApplicationList()}
         title={appId}
         subTitle={applicationData?.describe}
-      />
+      /> */}
       <Tabs
         tabPosition="left"
         size="small"
@@ -198,9 +198,9 @@ const ApplicationDashboard = (props: any) => {
             label: `服务发现`,
             key: "4",
             children: (
-            <div>
-              服务发现界面
-            </div>
+              <div>
+                服务发现界面
+              </div>
             ),
           },
         ]}></Tabs>

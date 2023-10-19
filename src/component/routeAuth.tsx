@@ -96,7 +96,7 @@ const Main: IMenuRoute[] = [
         if (targetRouterConfig) {
           if (pathname === "/404") {
             const { component } = targetRouterConfig;
-            return <Route  path={pathname} component={component} />
+            return <Route  path={pathname} Component={component} />
           } else {
             return <Navigate to="/home" />
           }
@@ -116,7 +116,7 @@ const Main: IMenuRoute[] = [
             return (
               <>
                 {config.map((route: IMenuRoute) => {
-                  return <Route  key={route.id} path={route.path} component={route.component} />
+                  return <Route  key={route.id} path={route.path} Component={route.component} />
                 })}
                 <Navigate to='/404' />
               </>
@@ -132,7 +132,7 @@ const Main: IMenuRoute[] = [
         return (
           <>
             {config.map((route: IMenuRoute) => {
-              return <Route key={route.id} path={route.path} component={route.component} />
+              return <Route key={route.id} path={route.path} Component={route.component} />
             })}
             <Navigate to={path} />
           </>
@@ -141,7 +141,7 @@ const Main: IMenuRoute[] = [
         return (
           <>
             {config.map((route: IMenuRoute) => {
-              return <Route  key={route.id} path={route.path} component={route.component} />
+              return <Route  key={route.id} path={route.path} Component={route.component} />
             })}
             <Navigate to='/login' />
           </>
@@ -152,3 +152,5 @@ const Main: IMenuRoute[] = [
   }
 }
 export default useNavigate(RouteAuth as any);
+
+
